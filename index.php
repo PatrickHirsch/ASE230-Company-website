@@ -1,9 +1,11 @@
-
+<?php
+require_once('lib/plainTextReader.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Qexal - Responsive Bootstrap 5 Landing Page Template</title>
+        <title><?= getMyText('data/organizationName') ?> - Responsive Bootstrap 5 Landing Page Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
         <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
@@ -46,7 +48,7 @@
                             <a href="#home" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#services" class="nav-link">Services</a>
+                            <a href="#services" class="nav-link">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a href="#features" class="nav-link">Features</a>
@@ -78,8 +80,12 @@
                     <div class="col-lg-8">
                         <div class="text-center">
                             <span class="badge badge-soft-primary mb-4">Professional Landing</span>
-                            <h1 class="font-weight-semibold mb-4 hero-3-title">Professional, Multipurpose Landing Page</h1>
-                            <p class="mb-5 text-muted subtitle w-75 mx-auto">Nemo enim ipsam voluptatem quia voluptas sit aut aspernatur aut fugit sed consequuntur magni dolores nesciunt.</p>
+                            <h1 class="font-weight-semibold mb-4 hero-3-title">
+								<?= getMyText('data/organizationName') ?>
+							</h1>
+                            <p class="mb-5 text-muted subtitle w-75 mx-auto">
+								<?= getMyText('data/missionStatement') ?>
+							</p>
                             
                             <div>
                                 <button type="button" class="btn btn-primary rounded-pill me-2">Sign up for free</button>
@@ -111,8 +117,10 @@
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-7 text-center">
-                        <h2 class="fw-bold">Our Services</h2>
-                        <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                        <h2 class="fw-bold">About Us</h2>
+                        <p class="text-muted">
+							<?= getMyText('data/aboutUs') ?>
+						</p>
                     </div>
                 </div>
                 <!-- end row -->
@@ -694,7 +702,9 @@
                     <div class="col-lg-4">
                         <div class="mb-4">
                             <a href="index-1.html"><img src="images/logo-light.png" alt="" class="" height="30" /></a>
-                            <p class="text-white-50 my-4">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.</p>
+                            <p class="text-white-50 my-4">
+								<?= getMyText('data/missionStatement') ?>
+							</p>
                         </div>
                     </div>
                     <!-- end col -->
@@ -763,7 +773,7 @@
                             <p class="text-white-50 f-15 mb-0">
                                 <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Qexal. Design By Themesbrand</p>
+                            </script> © <?= getMyText('data/organizationName') ?>. Design By Themesbrand</p>
                         </div>
                     </div>
                     <!-- end col -->
