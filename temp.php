@@ -1,9 +1,3 @@
-<?php
-require_once('./lib/csvReader.php');
-$monthlyPricingFile = './data/monthlyPricingPlan.csv';
-$monthlyPricingList = readCsv($monthlyPricingFile);
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -265,33 +259,61 @@ $monthlyPricingList = readCsv($monthlyPricingFile);
                 <div class="tab-content" id="pricingpills-tabContent">
                     <div class="tab-pane fade show active" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
                         <div class="row">
-                            <?php
-                            foreach($monthlyPricingList as $plan) {
-                                echo '                            <div class="col-lg-4">
+                            <div class="col-lg-4">
                                 <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
-                                    <div class="card-body px-4 py-5">';
-                                    if ($plan[6] == 'yes') {
-                                        echo '<span class="badge badge-primary pricing-badge shadow-lg">Most Popular</span>';
-                                    }
-                                       echo '<!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
+                                    <div class="card-body px-4 py-5">
+                                        <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
                                         <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
                                             <img src="images/pricing/1.png" alt="" class="img-fluid d-block mx-auto" />
                                         </div>
-                                        <h4 class="text-uppercase mb-4 pb-1">' . $plan[0] . '</h4>
-                                        <p class="text-muted">Onlinespace: <span class="fw-bold">' . $plan[1] . ' MB</span></p>
-                                        <p class="text-muted">Support: <span class="fw-bold">' . $plan[2] . '</span></p>
-                                        <p class="text-muted mb-4 pb-1">Domain ' . $plan[3] . '</p>
-                                        <p class="text-muted font-size-14 mb-1">' . (($plan[4] === 'all_included') ? 'All Extension Included' : 'All Extension Not Included') . '</p>
-                                        <p class="font-size-16 font-weight-semibold mb-4 price-tag">$' . $plan[5] . '.00 / Month</p>
+                                        <h4 class="text-uppercase mb-4 pb-1">Basic</h4>
+                                        <p class="text-muted">Onlinespace: <span class="fw-bold">50MB</span></p>
+                                        <p class="text-muted">Support: <span class="fw-bold">No</span></p>
+                                        <p class="text-muted mb-4 pb-1">Domain 1</p>
+                                        <p class="text-muted font-size-14 mb-1">All Extension Included</p>
+                                        <p class="font-size-16 font-weight-semibold mb-4 price-tag">$9.00 / Month</p>
                                         <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
                                     </div>
                                 </div>
                             </div>
                             <!-- end col -->
-
-                            ';
-                            }
-                            ?>
+                            <div class="col-lg-4">
+                                <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
+                                    <div class="card-body px-4 py-5">
+                                        <span class="badge badge-primary pricing-badge shadow-lg">Most Popular</span>
+                                        <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="square"></i></div> -->
+                                        <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
+                                            <img src="images/pricing/2.png" alt="" class="img-fluid d-block mx-auto" />
+                                        </div>
+                                        <h4 class="text-uppercase mb-4 pb-1">Standard</h4>
+                                        <p class="text-muted">Onlinespace: <span class="fw-bold">100MB</span></p>
+                                        <p class="text-muted">Support: <span class="fw-bold">Yes</span></p>
+                                        <p class="text-muted mb-4 pb-1">Domain 1</p>
+                                        <p class="text-muted font-size-14 mb-1">All Extension Included</p>
+                                        <p class="font-size-16 font-weight-semibold mb-4 price-tag">$39.00 / Month</p>
+                                        <a href="javascript: void(0);" class="btn btn-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-4">
+                                <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
+                                    <div class="card-body px-4 py-5">
+                                        <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="triangle"></i></div> -->
+                                        <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
+                                            <img src="images/pricing/3.png" alt="" class="img-fluid d-block mx-auto" />
+                                        </div>
+                                        <h4 class="text-uppercase mb-4 pb-1">Premium</h4>
+                                        <p class="text-muted">Onlinespace: <span class="fw-bold">200MB</span></p>
+                                        <p class="text-muted">Support: <span class="fw-bold">No</span></p>
+                                        <p class="text-muted mb-4 pb-1">Domain 1</p>
+                                        <p class="text-muted font-size-14 mb-1">All Extension Included</p>
+                                        <p class="font-size-16 font-weight-semibold mb-4 price-tag">$79.00 / Month</p>
+                                        <a href="javascript: void(0);" class="btn btn-soft-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
                         </div>
                         <!-- end row -->
                     </div>
@@ -302,7 +324,6 @@ $monthlyPricingList = readCsv($monthlyPricingFile);
                             <div class="col-lg-4">
                                 <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
                                     <div class="card-body px-4 py-5">
-
                                         <!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
                                         <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
                                             <img src="images/pricing/1.png" alt="" class="img-fluid d-block mx-auto" />
