@@ -1,8 +1,10 @@
 <?php
 require_once('lib/plainTextReader.php');
 require_once('lib/csvReader.php');
-$monthlyPricingFile = './data/monthlyPricingPlan.csv';
+$monthlyPricingFile = 'data/monthlyPricingPlan.csv';
 $monthlyPricingList = readCsv($monthlyPricingFile);
+$awardsFile='data/awards.csv';
+$awardsList=readCsv($awardsFile);
 require_once('lib/jsonReader.php');
 $JSONData = readUserData();
 ?>
@@ -53,10 +55,10 @@ $JSONData = readUserData();
                             <a href="#home" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#services" class="nav-link">About Us</a>
+                            <a href="#products" class="nav-link">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#features" class="nav-link">Features</a>
+                            <a href="#aboutUs" class="nav-link">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a href="#pricing" class="nav-link">Pricing</a>
@@ -64,12 +66,14 @@ $JSONData = readUserData();
                         <li class="nav-item">
                             <a href="#team" class="nav-link">Team</a>
                         </li>
-                        <li class="nav-item">
+                        <!--
+						<li class="nav-item">
                             <a href="#blog" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">Contact Us</a>
                         </li>
+						-->
                     </ul>
                     <a href="" class="btn btn-sm rounded-pill nav-btn ms-lg-3">Buy Now</a>
                 </div>
@@ -84,7 +88,7 @@ $JSONData = readUserData();
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center">
-                            <span class="badge badge-soft-primary mb-4">Professional Landing</span>
+<!--                        <span class="badge badge-soft-primary mb-4">Professional Landing</span>		-->
                             <h1 class="font-weight-semibold mb-4 hero-3-title">
 								<?= getMyText('data/organizationName') ?>
 							</h1>
@@ -118,14 +122,11 @@ $JSONData = readUserData();
         <!-- Hero End -->
 
         <!-- Services start -->
-        <section class="section" id="services">
+        <section class="section" id="products">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-7 text-center">
-                        <h2 class="fw-bold">About Us</h2>
-                        <p class="text-muted">
-							<?= getMyText('data/aboutUs') ?>
-						</p>
+                        <h2 class="fw-bold">Our Products</h2>
                     </div>
                 </div>
                 <!-- end row -->
@@ -167,56 +168,63 @@ $JSONData = readUserData();
         <!-- Services end -->
 
         <!-- Features start -->
-        <section class="section bg-light" id="features">
+        <section class="section bg-light" id="aboutUs">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-7 text-center">
-                        <h2 class="fw-bold">Our Features</h2>
-                        <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                        <h2 class="fw-bold">About Us</h2>
+                        <p class="text-muted">
+							<?= getMyText('data/aboutUs') ?>
+						</p>
                     </div>
                     <!-- end col -->
                 </div>
                 <!-- end row -->
-                <div class="row align-items-center mb-5">
-                    <div class="col-md-5 order-2 order-md-1 mt-md-0 mt-5">
-                        <h2 class="mb-4">Perfect Solution For Small Businesses</h2>
-                        <p class="text-muted mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis..</p>
-                        <a href="javascript: void(0);" class="btn btn-primary">Find out more <i class="icon-xs ms-2" data-feather="arrow-right"></i></a>
-                    </div>
-                    <!-- end col -->
-                    <div class="col-md-6 ms-md-auto order-1 order-md-2">
-                        <div class="position-relative">
-                            <div class="ms-5 features-img">
-                                <img src="images/features-1.jpg" alt="" class="img-fluid d-block mx-auto rounded shadow" />
-                            </div>
-                            <img src="images/dot-img.png" alt="" class="dot-img-left" />
-                        </div>
-                    </div>
-                    <!-- end col -->
-                </div> 
-                <!-- end row -->
-                <div class="row align-items-center section pb-0">
-                    <div class="col-md-6">
-                        <div class="position-relative mb-md-0 mb-5">
-                            <div class="me-5 features-img">
-                                <img src="images/features-2.jpg" alt="" class="img-fluid d-block mx-auto rounded shadow" />
-                            </div>
-                            <img src="images/dot-img.png" alt="" class="dot-img-right" />
-                        </div>
-                    </div>
-                    <!-- end col -->
-                    <div class="col-md-5 ms-md-auto">
-                        <h2 class="mb-4">Build community & conversion with our suite of social tool</h2>
-                        <p class="text-muted mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis..</p>
-                        <a href="javascript: void(0);" class="btn btn-primary">Find out more <i class="icon-xs ms-2" data-feather="arrow-right"></i></a>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </section>
         <!-- Features end -->
+				
+<?php				
+//			<!-- Awards Start -->
+//	                <div class="row align-items-center mb-5">
+//	                    <div class="col-md-5 order-2 order-md-1 mt-md-0 mt-5">
+//	                        <h2 class="mb-4">Perfect Solution For Small Businesses</h2>
+//	                        <p class="text-muted mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis..</p>
+//	                        <a href="javascript: void(0);" class="btn btn-primary">Find out more <i class="icon-xs ms-2" data-feather="arrow-right"></i></a>
+//	                    </div>
+//	                    <!-- end col -->
+//	                    <div class="col-md-6 ms-md-auto order-1 order-md-2">
+//	                        <div class="position-relative">
+//	                            <div class="ms-5 features-img">
+//	                                <img src="images/features-1.jpg" alt="" class="img-fluid d-block mx-auto rounded shadow" />
+//	                            </div>
+//	                            <img src="images/dot-img.png" alt="" class="dot-img-left" />
+//	                        </div>
+//	                    </div>
+//	                    <!-- end col -->
+//	                </div> 
+//	                <!-- end row -->
+//	                <div class="row align-items-center section pb-0">
+//	                    <div class="col-md-6">
+//	                        <div class="position-relative mb-md-0 mb-5">
+//	                            <div class="me-5 features-img">
+//	                                <img src="images/features-2.jpg" alt="" class="img-fluid d-block mx-auto rounded shadow" />
+//	                            </div>
+//	                            <img src="images/dot-img.png" alt="" class="dot-img-right" />
+//	                        </div>
+//	                    </div>
+//	                    <!-- end col -->
+//	                    <div class="col-md-5 ms-md-auto">
+//	                        <h2 class="mb-4">Build community & conversion with our suite of social tool</h2>
+//	                        <p class="text-muted mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis..</p>
+//	                        <a href="javascript: void(0);" class="btn btn-primary">Find out more <i class="icon-xs ms-2" data-feather="arrow-right"></i></a>
+//	                    </div>
+//	                    <!-- end col -->
+//	                </div>
+//	                <!-- end row -->
+//	            </div>
+//	            <!-- end container -->
+//	        </section>
+//	        <!-- Awards end -->
+?>
 
         <section class="section bg-gradient-primary">
             <div class="bg-overlay-img" style="background-image: url(images/demos.png);"></div>
@@ -224,9 +232,13 @@ $JSONData = readUserData();
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center">
-                            <h1 class="text-white mb-4">Build your dream website today</h1>
-                            <p class="text-white mb-5 font-size-16">Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totamrem aperiam eaque inventore veritatis quasi.</p>
-                            <a href="#" class="btn btn-lg btn-light">Ask for Demonstration</a>
+                            <h1 class="text-white mb-4">Our Awards</h1>
+								<?php foreach($awardsList as $award): ?>
+									<b><?= $award[0] ?></b>
+									<p class="text-white mb-5 font-size-16"><?= $award[1] ?></p>
+								<?php endforeach ?>
+								
+                            <a href="#" class="btn btn-lg btn-light">See More</a>
                         </div>
                     </div>
                     <!-- end col -->
@@ -243,7 +255,9 @@ $JSONData = readUserData();
         <div class="row justify-content-center mb-5">
             <div class="col-lg-7 text-center">
                 <h2 class="fw-bold">Pricing Plan</h2>
-                <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+                <!--
+				<p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+				-->
             </div>
         </div>
         <!-- end row -->
@@ -490,182 +504,183 @@ $JSONData = readUserData();
         <!-- Team end -->
 
         <!-- Blog start -->
-        <section class="section" id="blog">
-            <div class="container">
-                <div class="row justify-content-center mb-4">
-                    <div class="col-lg-7 text-center">
-                        <h2 class="fw-bold">Our Blog</h2>
-                        <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card mt-4 border-0 shadow">
-                            <div class="card-body p-4">
-                                <span class="badge badge-soft-primary">UI & UX Design</span>
-                                <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Step bt step to conduct usability testing</a></h4>
-                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                                <div class="d-flex align-items-center mt-4 pt-2">
-                                    <img src="images/user/img-2.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
-                                    <div class="flex-body">
-                                        <h5 class="font-size-17 mb-0">John Yeager</h5>
-                                        <p class="text-muted mb-0 font-size-14">Designer, New York</p>
-                                    </div>
-                                </div>
-                            </div><!-- end cardbody -->
-                        </div><!-- end card -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-4">
-                        <div class="card mt-4 border-0 shadow">
-                            <div class="card-body p-4">
-                                <span class="badge badge-soft-primary">CEO</span>
-                                <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Increase conversion rate from ad to landing page</a></h4>
-                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                                <div class="d-flex align-items-center mt-4 pt-2">
-                                    <img src="images/user/img-3.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
-                                    <div class="flex-body">
-                                        <h5 class="font-size-17 mb-0">Berneice Harris</h5>
-                                        <p class="text-muted mb-0 font-size-14">Designer, New York</p>
-                                    </div>
-                                </div>
-                            </div><!-- end cradbody -->
-                        </div><!-- end card -->
-                    </div>
-                    <!-- end col -->
-
-                    <div class="col-lg-4">
-                        <div class="card mt-4 border-0 shadow">
-                            <div class="card-body p-4">
-                                <span class="badge badge-soft-primary">Developer</span>
-                                <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Why small business should start marketing</a></h4>
-                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                                <div class="d-flex align-items-center mt-4 pt-2">
-                                    <img src="images/user/img-1.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
-                                    <div class="flex-body">
-                                        <h5 class="font-size-17 mb-0">Sarah Pettway</h5>
-                                        <p class="text-muted mb-0 font-size-14">Designer, New York</p>
-                                    </div>
-                                </div>
-                            </div><!-- end cardbody -->
-                        </div><!-- end card -->
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </section>
-        <!-- Blog end -->
-
-        <!-- CTA start -->
-        <section class="section bg-center w-100 bg-light" style="background-image: url(images/cta-bg.png);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card bg-gradient-primary text-center border-0">
-                            <div class="bg-overlay-img" style="background-image: url(images/demos.png);"></div>
-                            <div class="card-body mx-auto p-sm-5 p-4">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10">
-                                        <div class="p-3">
-                                            <h2 class="text-white mb-4">Join our Growing Community</h2>
-                                            <p class="text-white-70 font-size-16 mb-4 pb-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                            <a href="javascript: void(0);" class="btn btn-light rounded-pill">Sign Up for free</a>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-                            <!-- end cardbody -->
-                        </div>
-                        <!-- end card -->
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </section>
-        <!-- CTA end -->
-
-        <!-- Contact us start -->
-        <section class="section" id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2 class="fw-bold mb-4">Get in Touch</h2>
-                        <p class="text-muted mb-5">Et harum quidem rerum facilis est expedita distinctio temporecum soluta nobis est eligendi optio cumque nihil impedit quo minus maxime.</p>
-                       
-                        <div>
-                            <form method="post" name="myForm" onsubmit="return validateForm()">
-                                <p id="error-msg"></p>
-                                <div id="simple-msg"></div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mb-4">
-                                            <label for="name" class="text-muted form-label">Name</label>
-                                            <input name="name" id="name" type="text" class="form-control" placeholder="Enter name*" >
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                    <div class="col-lg-6">
-                                        <div class="mb-4">
-                                            <label for="email" class="text-muted form-label">Email</label>
-                                            <input name="email" id="email" type="email" class="form-control" placeholder="Enter email*">
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                    <div class="col-md-12">
-                                        <div class="mb-4">
-                                            <label for="subject" class="text-muted form-label">Subject</label>
-                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject.." />
-                                        </div>
-    
-                                        <div class="mb-4 pb-2">
-                                            <label for="comments" class="text-muted form-label">Message</label>
-                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Enter message..."></textarea>
-                                        </div>
-    
-                                        <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </form>
-                            <!-- end form -->
-                        </div>
-                    </div>
-                    <!-- end col -->
-
-                    <div class="col-lg-5 ms-lg-auto">
-                        <div class="mt-5 mt-lg-0">
-                            <img src="images/contact.png" alt="" class="img-fluid d-block" />
-                            <p class="text-muted mt-5 mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="mail"></i> Support@info.com</p>
-                            <p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="phone"></i> +91 123 4556 789</p>
-                            <p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="map-pin"></i> 2976 Edwards Street Rocky Mount, NC 27804</p>
-                            <ul class="list-inline pt-4">
-                                <li class="list-inline-item me-3">
-                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item me-3">
-                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </section>
-        <!-- Contact us end -->
-
+<?php        
+//			<section class="section" id="blog">
+//	            <div class="container">
+//	                <div class="row justify-content-center mb-4">
+//	                    <div class="col-lg-7 text-center">
+//	                        <h2 class="fw-bold">Our Blog</h2>
+//	                        <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem ab illo inventore.</p>
+//	                    </div>
+//	                </div>
+//	                <div class="row">
+//	                    <div class="col-lg-4">
+//	                        <div class="card mt-4 border-0 shadow">
+//	                            <div class="card-body p-4">
+//	                                <span class="badge badge-soft-primary">UI & UX Design</span>
+//	                                <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Step bt step to conduct usability testing</a></h4>
+//	                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+//	                                <div class="d-flex align-items-center mt-4 pt-2">
+//	                                    <img src="images/user/img-2.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+//	                                    <div class="flex-body">
+//	                                        <h5 class="font-size-17 mb-0">John Yeager</h5>
+//	                                        <p class="text-muted mb-0 font-size-14">Designer, New York</p>
+//	                                    </div>
+//	                                </div>
+//	                            </div><!-- end cardbody -->
+//	                        </div><!-- end card -->
+//	                    </div><!-- end col -->
+//	
+//	                    <div class="col-lg-4">
+//	                        <div class="card mt-4 border-0 shadow">
+//	                            <div class="card-body p-4">
+//	                                <span class="badge badge-soft-primary">CEO</span>
+//	                                <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Increase conversion rate from ad to landing page</a></h4>
+//	                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+//	                                <div class="d-flex align-items-center mt-4 pt-2">
+//	                                    <img src="images/user/img-3.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+//	                                    <div class="flex-body">
+//	                                        <h5 class="font-size-17 mb-0">Berneice Harris</h5>
+//	                                        <p class="text-muted mb-0 font-size-14">Designer, New York</p>
+//	                                    </div>
+//	                                </div>
+//	                            </div><!-- end cradbody -->
+//	                        </div><!-- end card -->
+//	                    </div>
+//	                    <!-- end col -->
+//	
+//	                    <div class="col-lg-4">
+//	                        <div class="card mt-4 border-0 shadow">
+//	                            <div class="card-body p-4">
+//	                                <span class="badge badge-soft-primary">Developer</span>
+//	                                <h4 class="font-size-22 my-4"><a href="javascript: void(0);">Why small business should start marketing</a></h4>
+//	                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+//	                                <div class="d-flex align-items-center mt-4 pt-2">
+//	                                    <img src="images/user/img-1.jpg" class="rounded-circle avatar-sm me-3" alt="..." />
+//	                                    <div class="flex-body">
+//	                                        <h5 class="font-size-17 mb-0">Sarah Pettway</h5>
+//	                                        <p class="text-muted mb-0 font-size-14">Designer, New York</p>
+//	                                    </div>
+//	                                </div>
+//	                            </div><!-- end cardbody -->
+//	                        </div><!-- end card -->
+//	                    </div>
+//	                    <!-- end col -->
+//	                </div>
+//	                <!-- end row -->
+//	            </div>
+//	            <!-- end container -->
+//	        </section>
+//	        <!-- Blog end -->
+//	
+//	        <!-- CTA start -->
+//	        <section class="section bg-center w-100 bg-light" style="background-image: url(images/cta-bg.png);">
+//	            <div class="container">
+//	                <div class="row">
+//	                    <div class="col-lg-12">
+//	                        <div class="card bg-gradient-primary text-center border-0">
+//	                            <div class="bg-overlay-img" style="background-image: url(images/demos.png);"></div>
+//	                            <div class="card-body mx-auto p-sm-5 p-4">
+//	                                <div class="row justify-content-center">
+//	                                    <div class="col-lg-10">
+//	                                        <div class="p-3">
+//	                                            <h2 class="text-white mb-4">Join our Growing Community</h2>
+//	                                            <p class="text-white-70 font-size-16 mb-4 pb-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+//	                                            <a href="javascript: void(0);" class="btn btn-light rounded-pill">Sign Up for free</a>
+//	                                        </div>
+//	                                    </div>
+//	                                    <!-- end col -->
+//	                                </div>
+//	                                <!-- end row -->
+//	                            </div>
+//	                            <!-- end cardbody -->
+//	                        </div>
+//	                        <!-- end card -->
+//	                    </div>
+//	                    <!-- end col -->
+//	                </div>
+//	                <!-- end row -->
+//	            </div>
+//	            <!-- end container -->
+//	        </section>
+//	        <!-- CTA end -->
+//	
+//	        <!-- Contact us start -->
+//	        <section class="section" id="contact">
+//	            <div class="container">
+//	                <div class="row">
+//	                    <div class="col-lg-6">
+//	                        <h2 class="fw-bold mb-4">Get in Touch</h2>
+//	                        <p class="text-muted mb-5">Et harum quidem rerum facilis est expedita distinctio temporecum soluta nobis est eligendi optio cumque nihil impedit quo minus maxime.</p>
+//	                       
+//	                        <div>
+//	                            <form method="post" name="myForm" onsubmit="return validateForm()">
+//	                                <p id="error-msg"></p>
+//	                                <div id="simple-msg"></div>
+//	                                <div class="row">
+//	                                    <div class="col-lg-6">
+//	                                        <div class="mb-4">
+//	                                            <label for="name" class="text-muted form-label">Name</label>
+//	                                            <input name="name" id="name" type="text" class="form-control" placeholder="Enter name*" >
+//	                                        </div>
+//	                                    </div>
+//	                                    <!-- end col -->
+//	                                    <div class="col-lg-6">
+//	                                        <div class="mb-4">
+//	                                            <label for="email" class="text-muted form-label">Email</label>
+//	                                            <input name="email" id="email" type="email" class="form-control" placeholder="Enter email*">
+//	                                        </div>
+//	                                    </div>
+//	                                    <!-- end col -->
+//	                                    <div class="col-md-12">
+//	                                        <div class="mb-4">
+//	                                            <label for="subject" class="text-muted form-label">Subject</label>
+//	                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject.." />
+//	                                        </div>
+//	    
+//	                                        <div class="mb-4 pb-2">
+//	                                            <label for="comments" class="text-muted form-label">Message</label>
+//	                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Enter message..."></textarea>
+//	                                        </div>
+//	    
+//	                                        <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+//	                                    </div>
+//	                                    <!-- end col -->
+//	                                </div>
+//	                                <!-- end row -->
+//	                            </form>
+//	                            <!-- end form -->
+//	                        </div>
+//	                    </div>
+//	                    <!-- end col -->
+//	
+//	                    <div class="col-lg-5 ms-lg-auto">
+//	                        <div class="mt-5 mt-lg-0">
+//	                            <img src="images/contact.png" alt="" class="img-fluid d-block" />
+//	                            <p class="text-muted mt-5 mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="mail"></i> Support@info.com</p>
+//	                            <p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="phone"></i> +91 123 4556 789</p>
+//	                            <p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="map-pin"></i> 2976 Edwards Street Rocky Mount, NC 27804</p>
+//	                            <ul class="list-inline pt-4">
+//	                                <li class="list-inline-item me-3">
+//	                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="facebook"></i></a>
+//	                                </li>
+//	                                <li class="list-inline-item me-3">
+//	                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="twitter"></i></a>
+//	                                </li>
+//	                                <li class="list-inline-item">
+//	                                    <a href="javascript: void(0);" class="social-icon icon-mono avatar-xs rounded-circle"><i class="icon-xs" data-feather="instagram"></i></a>
+//	                                </li>
+//	                            </ul>
+//	                        </div>
+//	                    </div>
+//	                    <!-- end col -->
+//	                </div>
+//	                <!-- end row -->
+//	            </div>
+//	            <!-- end container -->
+//	        </section>
+//	        <!-- Contact us end -->
+?>
         <!-- Footer Start -->
         <footer class="footer" style="background-image: url(images/footer-bg.png);">
             <div class="container">
