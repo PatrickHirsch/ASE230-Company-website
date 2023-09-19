@@ -10,7 +10,7 @@ function readUserData()
 function fillTeam($JSONData)
 {
     $counter = 0;
-    while ($counter < count($JSONData['Team'])) {
+    foreach($JSONData['Team'] as $team) {
         $teamMember = $JSONData['Team'][array_keys($JSONData['Team'])[$counter]];
 
         // Extract team member information from JSON
