@@ -1,6 +1,6 @@
 <?php 
 require_once('functions.php');
-$JSONData == json_decode(readUserData());
+$JSONData = readUserData();
 ?>
 
 <!DOCTYPE html>

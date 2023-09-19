@@ -1,16 +1,18 @@
 <?php
 function readUserData()
 {
+
+    $file = file_get_contents('./lib/starluxe.json', false, null);
+    $file = json_decode($file,true);
     
-    $file = file_get_contents('starluxe.json');
-    $file = json_decode($file);
     return $file;
 }
 
 function fillTeam($JSONData)
 {
     $counter = 0;
-    foreach($JSONData['Team'] as $team) {
+    
+    foreach ($JSONData['Team'] as $team) {
         $teamMember = $JSONData['Team'][array_keys($JSONData['Team'])[$counter]];
 
         // Extract team member information from JSON
