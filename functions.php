@@ -12,17 +12,17 @@ function fillTeam($JSONData)
 {
     $counter = 0;
     
-    foreach ($JSONData['Team'] as $team) {
+    foreach ($JSONData['Team'] as $teamKey => $team) {
         $teamMember = $JSONData['Team'][array_keys($JSONData['Team'])[$counter]];
 
         // Extract team member information from JSON
-        $name = $teamMember['title'];
-        $position = $teamMember['description'];
+        $name = $teamKey;
+        $position = $teamMember['title'];
         $imageSrc = $teamMember['image'];
 
         // Echo the HTML template with the extracted information
         echo '
-        <div class="row">
+
             <div class="col-lg-3 col-sm-6">
                 <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
                     <div class="position-relative overflow-hidden">
@@ -45,9 +45,32 @@ function fillTeam($JSONData)
                     </div>
                 </div>
             </div>
-        </div>';
+';
 
         $counter++;
     }
+}
+
+
+function fillServices($JSONData) {
+    // Loop through the services in the JSON data
+    foreach ($JSONData["Key Products & Services"] as $serviceName => $serviceDetails) {
+        $description = $serviceDetails["description"];
+        
+        // Start generating the HTML for each service
+        echo '<div class="col-lg-4">
+            <div class="service-box text-center px-4 py-5 position-relative mb-4">
+                <div class="service-box-content p-4">
+                    <div class="icon-mono service-icon avatar-md mx-auto mb-4">
+                        <i class="" data-feather="box"></i>
+                    </div>
+                    <h4 class="mb-3 font-size-22">' . $serviceName . '</h4>
+                    <p class="text-muted mb-0">' . $description . '</p>
+                </div>
+            </div>
+        </div>';
+    }
+
+
 }
 ?>

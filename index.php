@@ -121,18 +121,8 @@ $JSONData = readUserData();
                 </div>
                 <!-- end row -->
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="service-box text-center px-4 py-5 position-relative mb-4">
-                            <div class="service-box-content p-4">
-                                <div class="icon-mono service-icon avatar-md mx-auto mb-4">
-                                    <i class="" data-feather="box"></i>
-                                </div>
-                                <h4 class="mb-3 font-size-22">Digital Design</h4>
-                                <p class="text-muted mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col -->
+                    <?php fillServices($JSONData);?>
+                    <!-- end col 
 
                     <div class="col-lg-4">
                         <div class="service-box text-center px-4 py-5 position-relative mb-4 active">
@@ -145,7 +135,7 @@ $JSONData = readUserData();
                             </div>
                         </div>
                     </div>
-                    <!-- end col -->
+                  
 
                     <div class="col-lg-4">
                         <div class="service-box text-center px-4 py-5 position-relative mb-4">
@@ -158,9 +148,9 @@ $JSONData = readUserData();
                             </div>
                         </div>
                     </div>
-                    <!-- end col -->
+                    end col 
                 </div>
-                <!-- end row -->
+               end row -->
             </div>
             <!-- end container -->
 
@@ -411,7 +401,9 @@ $JSONData = readUserData();
                     <!-- end col -->
                 </div>
                 <!-- end row -->
+                <div class="row">
                 <?php fillTeam($JSONData);?>
+                </div>
                 <!-- <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
