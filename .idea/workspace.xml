@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d100b17-9e62-48cd-9e67-a8538d8f80c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/awards.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/awards.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/monthlyPricingPlan.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/monthlyPricingPlan.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/yearlyPricingPlan.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/yearlyPricingPlan.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/csvReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/csvReader.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +32,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2VUTX2oSRxewIuba3ESvAh6wa3H" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "NorbergP2",
-    "last_opened_file_path": "C:/xampp/htdocs/ASE230-Company-website",
+    "last_opened_file_path": "C:/xampp/htdocs/ASE230-Company-website/admin/pages",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +54,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ASE230-Company-website\admin\pages" />
+      <recent name="C:\xampp\htdocs\ASE230-Company-website\admin\awards" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ASE230-Company-website\data" />
     </key>
@@ -59,7 +71,9 @@
       <option name="presentableId" value="Default" />
       <updated>1694889694493</updated>
       <workItem from="1694889695581" duration="2009000" />
-      <workItem from="1695052830564" duration="5341000" />
+      <workItem from="1695052830564" duration="6476000" />
+      <workItem from="1695302738670" duration="25000" />
+      <workItem from="1696174824185" duration="9437000" />
     </task>
     <servers />
   </component>
