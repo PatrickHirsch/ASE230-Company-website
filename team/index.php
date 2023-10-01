@@ -12,11 +12,12 @@ error_log(print_r($JSONData,true));
 </head>
 <body>
     <h1>Starluxe Team</h1>
-     <table>
+     <table border="1">
     <tr>
       <th>Name</th>
       <th>Position</th>
       <th>Image</th>
+      <th>Description</th>
     </tr>
     <?php fillTeamTable($JSONData);?>
      </table>

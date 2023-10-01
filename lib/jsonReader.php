@@ -61,12 +61,14 @@ function fillTeamTable($JSONData)
         $name = $teamKey;
         $position = $teamMember['title'];
         $imageSrc = $teamMember['image'];
+        $description = $teamMember['description'];
 
         // Echo the HTML template with the extracted information
         echo "<tr>
     <td> {$name}</td>
     <td> {$position}</td>
     <td>{$imageSrc}</td>
+    <td>{$description}</td>
   </tr>";
         $counter++;
     }
