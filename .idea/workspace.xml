@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d100b17-9e62-48cd-9e67-a8538d8f80c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/awards.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/awards.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/monthlyPricingPlan.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/monthlyPricingPlan.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/yearlyPricingPlan.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/yearlyPricingPlan.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/csvReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/csvReader.php" afterDir="false" />
-    </list>
+    <list default="true" id="6d100b17-9e62-48cd-9e67-a8538d8f80c3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +65,7 @@
       <workItem from="1694889695581" duration="2009000" />
       <workItem from="1695052830564" duration="6476000" />
       <workItem from="1695302738670" duration="25000" />
-      <workItem from="1696174824185" duration="9437000" />
+      <workItem from="1696174824185" duration="9802000" />
     </task>
     <servers />
   </component>
