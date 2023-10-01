@@ -2,16 +2,16 @@
 function readUserData()
 {
 
-    $file = file_get_contents('data/starluxe.json', false, null);
-    $file = json_decode($file,true);
-    
+    $file = file_get_contents('/Applications/XAMPP/htdocs/ase230/week4/ASE230-Company-website/lib/starluxe.json', false, null);
+    $file = json_decode($file, true);
+
     return $file;
 }
 
 function fillTeam($JSONData)
 {
     $counter = 0;
-    
+
     foreach ($JSONData['Team'] as $teamKey => $team) {
         $teamMember = $JSONData['Team'][array_keys($JSONData['Team'])[$counter]];
 
@@ -51,12 +51,35 @@ function fillTeam($JSONData)
     }
 }
 
+function fillTeamTable($JSONData)
+{
+    $counter = 0;
+    foreach ($JSONData['Team'] as $teamKey => $team) {
+        $teamMember = $JSONData['Team'][array_keys($JSONData['Team'])[$counter]];
 
-function fillServices($JSONData) {
+        // Extract team member information from JSON
+        $name = $teamKey;
+        $position = $teamMember['title'];
+        $imageSrc = $teamMember['image'];
+
+        // Echo the HTML template with the extracted information
+        echo "<tr>
+    <td> {$name}</td>
+    <td> {$position}</td>
+    <td>{$imageSrc}</td>
+  </tr>";
+        $counter++;
+    }
+
+}
+
+
+function fillServices($JSONData)
+{
     // Loop through the services in the JSON data
     foreach ($JSONData["Key Products & Services"] as $serviceName => $serviceDetails) {
         $description = $serviceDetails["description"];
-        
+
         // Start generating the HTML for each service
         echo '<div class="col-lg-4">
             <div class="service-box text-center px-4 py-5 position-relative mb-4">

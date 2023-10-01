@@ -51,6 +51,34 @@ function fillTeam($JSONData)
     }
 }
 
+function fillTeamTable($JSONData){
+    $counter = 0;
+    
+    foreach ($JSONData['Team'] as $teamKey => $team) {
+        $teamMember = $JSONData['Team'][array_keys($JSONData['Team'])[$counter]];
+
+        // Extract team member information from JSON
+        $name = $teamKey;
+        $position = $teamMember['title'];
+        $imageSrc = $teamMember['image'];
+
+        // Echo the HTML template with the extracted information
+        echo '
+    <table>
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Image</th>
+  </tr>
+  <tr>
+    <td>'. $name .'</td>
+    <td>'. $position .'</td>
+    <td>'.$imageSrc .'</td>
+  </tr>
+</table>';
+$counter++;
+}}
+
 
 function fillServices($JSONData) {
     // Loop through the services in the JSON data
