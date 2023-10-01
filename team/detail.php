@@ -1,6 +1,7 @@
 <?php
 // Load JSON data from starluxe.json file
-readUserData();
+require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
+$data = readUserData();
 
 // Check if the team member name is provided as a query parameter
 if (isset($_GET['name'])) {

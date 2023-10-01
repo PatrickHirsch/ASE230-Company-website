@@ -1,6 +1,7 @@
 <?php
 // Load JSON data from team.json file
-readUserData();
+require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
+$data = readUserData();
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@ readUserData();
 </head>
 <body>
     <h1>Starluxe Team</h1>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
