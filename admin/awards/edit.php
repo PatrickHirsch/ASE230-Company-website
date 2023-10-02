@@ -1,14 +1,14 @@
 <?php
 require_once('./awards.php');
-$index = $_GET['index'];
-print_r($index);
+
+$index = htmlspecialchars($_GET['index']);
 $item = getItem($index);
 $getYear = htmlspecialchars($item[0]);
 $getDesc = htmlspecialchars($item[1]);
 if (count($_POST) > 0) {
     $year = htmlspecialchars($_POST['year']);
     $description = htmlspecialchars($_POST['description']);
-    updateItem($index, $year, $description);
+    updateItem($index, $year, htmlspecialchars_decode($description));
     echo '<p style="color: green;">Item updated successfully</p>';
 }
 ?>

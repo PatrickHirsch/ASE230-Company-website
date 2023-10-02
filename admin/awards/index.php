@@ -1,5 +1,10 @@
 <?php
 require_once('./awards.php');
+
+if (count($_POST) > 0) {
+    $index = htmlspecialchars($_POST['index']);
+    deleteItem($index);
+}
 $awardsList = getCsvArray();
 ?>
 

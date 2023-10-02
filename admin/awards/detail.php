@@ -1,6 +1,6 @@
 <?php
-$index = $_GET['index'];
 require_once('./awards.php');
+$index = htmlspecialchars($_GET['index']);
 $item = getItem($index);
 ?>
 

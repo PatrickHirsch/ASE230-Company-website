@@ -233,10 +233,13 @@ $JSONData = readUserData();
                     <div class="col-lg-8">
                         <div class="text-center">
                             <h1 class="text-white mb-4">Our Awards</h1>
-								<?php foreach($awardsList as $award): ?>
+								<?php foreach($awardsList as $award):
+                                if(!empty($award)):
+                                    ?>
 									<b><?= $award[0] ?></b>
 									<p class="text-white mb-5 font-size-16"><?= $award[1] ?></p>
-								<?php endforeach ?>
+								<?php endif;
+                                endforeach ?>
 								
                             <a href="#" class="btn btn-lg btn-light">See More</a>
                         </div>
@@ -278,13 +281,15 @@ $JSONData = readUserData();
                         <div class="row">
                             <?php
                             foreach($monthlyPricingList as $plan) {
-                                echo '                            <div class="col-lg-4">
+                                if (!empty($plan)) {
+                                    echo '
+                            <div class="col-lg-4">
                                 <div class="card plan-card mt-4 rounded text-center border-0 shadow overflow-hidden">
                                     <div class="card-body px-4 py-5">';
                                     if ($plan[6] == 'yes') {
                                         echo '<span class="badge badge-primary pricing-badge shadow-lg">Most Popular</span>';
                                     }
-                                       echo '<!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
+                                    echo '<!-- <div class="icon-mono avatar-md bg-soft-primary text-primary rounded mx-auto mb-5"><i class="icon-lg" data-feather="circle"></i></div> -->
                                         <div class="icon-mono avatar-md bg-soft-primary rounded mx-auto mb-5 p-3">
                                             <img src="images/pricing/1.png" alt="" class="img-fluid d-block mx-auto" />
                                         </div>
@@ -301,6 +306,8 @@ $JSONData = readUserData();
                             <!-- end col -->
 
                             ';
+                                }
+
                             }
                             ?>
                         </div>
