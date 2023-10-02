@@ -98,7 +98,7 @@ function fillServices($JSONData)
 }
 
 function collectImage($fileInputName, $uploadDirectory, &$data) {
-
+    error_log(print_r($_FILES,true));
     // Check if the file was uploaded without errors
     if ($_FILES[$fileInputName]['error'] === UPLOAD_ERR_OK) {
         // Check if the uploaded file is an image
@@ -117,14 +117,8 @@ function collectImage($fileInputName, $uploadDirectory, &$data) {
                 // Move the uploaded file to the specified directory
                 if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], $uploadDirectory . '/' . $filename)) {
                     // Add the image path to the data array
-                    $data['Team'][$_POST['name']]['image'] = 'images/team/' . $filename;
-                    error_log(print_r($data['Team'][$_POST['name']]['image'],true));
-                    // Save the updated data back to the starluxe.json file
-                    $updatedData = json_encode($data, JSON_PRETTY_PRINT);
-                    $_SESSION['message'] = 'success';
-                    error_log($updatedData);
-                    unlink(__DIR__ . '/../lib/starluxe.json');
-                    file_put_contents(__DIR__ . '/../lib/starlux.json', $updatedData);
+                    
+                    
 
                     return ['success' => true, 'filename' => $filename];
                 } else {

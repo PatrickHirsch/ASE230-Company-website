@@ -41,9 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             echo '<h1> Error: ' . $result['message']. '</h1>';
         }
-
+        error_log(print_r($result,true));
+        
+        $newMember['file'] = $result['filename'];
         // Add the new team member to the "Team" section
         $data['Team'][$name] = $newMember;
+        
 
         // Save the updated data back to the starluxe.json file
         $updatedData = json_encode($data, JSON_PRETTY_PRINT);
