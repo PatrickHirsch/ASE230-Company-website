@@ -1,11 +1,11 @@
 <?php
-require_once('lib/plainTextReader.php');
-require_once('lib/csvReader.php');
+require_once('./lib/plainTextReader.php');
+require_once('./lib/csvReader.php');
 $monthlyPricingFile = 'data/monthlyPricingPlan.csv';
 $monthlyPricingList = readCsv($monthlyPricingFile);
 $awardsFile='data/awards.csv';
 $awardsList=readCsv($awardsFile);
-require_once('lib/jsonReader.php');
+require_once('./lib/jsonReader.php');
 $JSONData = readUserData();
 ?>
 <!DOCTYPE html>

@@ -2,7 +2,7 @@
 function readUserData()
 {
 
-    $file = file_get_contents('/Applications/XAMPP/htdocs/ase230/week4/ASE230-Company-website/lib/starluxe.json', false, null);
+    $file = file_get_contents(__DIR__ . '/../lib/starluxe.json', false, null);
     $file = json_decode($file, true);
 
     return $file;
@@ -106,25 +106,32 @@ function collectImage($fileInputName, $uploadDirectory, &$data) {
         $fileMimeType = mime_content_type($_FILES[$fileInputName]['tmp_name']);
         
         if (in_array($fileMimeType, $mimeTypes)) {
+            
+            
             // Check if the file size is less than or equal to 100,000 bytes (100 KB)
-            if ($_FILES[$fileInputName]['size'] <= 100000) {
+            if ($_FILES[$fileInputName]['size'] <= 100000000) {
+                error_log('test2');
                 // Generate a unique filename to avoid overwriting existing files
                 $filename = uniqid('image_') . '.' . pathinfo($_FILES[$fileInputName]['name'], PATHINFO_EXTENSION);
-                
+                error_log(print_r($_FILES, true));
                 // Move the uploaded file to the specified directory
                 if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], $uploadDirectory . '/' . $filename)) {
                     // Add the image path to the data array
                     $data['Team'][$_POST['name']]['image'] = 'images/team/' . $filename;
-                    
+                    error_log(print_r($data['Team'][$_POST['name']]['image'],true));
                     // Save the updated data back to the starluxe.json file
                     $updatedData = json_encode($data, JSON_PRETTY_PRINT);
-                    file_put_contents('/Applications/XAMPP/htdocs/ase230/week4/ASE230-Company-website/lib/starluxe.json', $updatedData);
+                    $_SESSION['message'] = 'success';
+                    error_log($updatedData);
+                    unlink(__DIR__ . '/../lib/starluxe.json');
+                    file_put_contents(__DIR__ . '/../lib/starlux.json', $updatedData);
 
                     return ['success' => true, 'filename' => $filename];
                 } else {
                     return ['success' => false, 'message' => 'Failed to move the uploaded file.'];
                 }
             } else {
+                $_SESSION["message"]="The uploaded image is too large.";
                 return ['success' => false, 'message' => 'The uploaded image is too large.'];
             }
         } else {

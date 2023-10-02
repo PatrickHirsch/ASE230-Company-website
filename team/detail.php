@@ -1,6 +1,7 @@
 <?php
+ session_start();
 // Load JSON data from starluxe.json file
-require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
+require_once(__DIR__ .'/../lib/jsonReader.php');
 $data = readUserData();
 
 // Check if the team member name is provided as a query parameter
@@ -26,6 +27,10 @@ if (isset($_POST['delete'])) {
     // Redirect back to the index.php page or any other desired location
     header('Location: delete.php');
     exit();
+}
+error_log(print_r($_SESSION,true));
+if (isset($_SESSION['message'])){
+    echo $_SESSION;
 }
 ?>
 

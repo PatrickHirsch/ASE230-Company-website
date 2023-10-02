@@ -1,8 +1,9 @@
 <?php
+session_start();
 // Load JSON data from starluxe.json file
-require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
+require_once(__DIR__.'/../lib/jsonReader.php');
 $data = readUserData();
-$uploadDirectory = __DIR__ . '/images/team';
+$uploadDirectory = __DIR__ . '/../images/team';
 
 // Include the collectImage function here
 
@@ -31,14 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!empty($image)) {
             $newMember['image'] = $image;
         }
-        $result = collectImage('image1', $uploadDirectory,$data);
+        $result = collectImage('image1', $uploadDirectory, $data);
 
         if ($result['success']) {
             // Update the $image variable with the uploaded filename
             $image = 'images/team/' . $result['filename']; // Adjust the path to match your directory structure
             echo 'File uploaded successfully. Filename: ' . $image;
         } else {
-            echo 'Error: ' . $result['message'];
+            echo '<h1> Error: ' . $result['message']. '</h1>';
         }
 
         // Add the new team member to the "Team" section
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Save the updated data back to the starluxe.json file
         $updatedData = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents('/Applications/XAMPP/htdocs/ase230/week4/ASE230-Company-website/lib/starluxe.json', $updatedData);
+        file_put_contents(__DIR__. '/../lib/starluxe.json', $updatedData);
 
         // Redirect to the detail page for the newly created team member
         header("Location: detail.php?name=" . urlencode($name));
