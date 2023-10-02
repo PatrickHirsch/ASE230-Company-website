@@ -22,6 +22,6 @@ error_log(print_r($JSONData,true));
     <?php fillTeamTable($JSONData);?>
      </table>
     <br>
-    <a href="create.php">Create</a>
+    <button><a href="create.php">Create</a></button>
 </body>
 </html>
