@@ -20,25 +20,31 @@ if (isset($data['Key Products & Services'])) {
     <h1>Key Products & Services</h1>
 
     <!-- Create button to navigate to the create page -->
-    <p><a href="create_product.php">Create New Product/Service</a></p>
+    <button><a href="create.php">Create New Product/Service</a></button>
 
     <!-- Display a table of available items -->
-    <table>
+    <table border="1">
         <tr>
             <th>Product/Service Name</th>
             <th>Description</th>
-            <th>Actions</th>
+            <th>Applications</th>
         </tr>
         <?php foreach ($keyProducts as $productName => $productInfo) : ?>
             <tr>
-                <td><?php echo htmlspecialchars($productName); ?></td>
+                <td><a href="detail.php?name=<?php echo urlencode($productName); ?>"><?php echo htmlspecialchars($productName); ?></a></td>
                 <td><?php echo htmlspecialchars($productInfo['description']); ?></td>
                 <td>
-                    <!-- View details link -->
-                    <a href="detail_product.php?name=<?php echo urlencode($productName); ?>">View Details</a>
+                    <ul>
+                        <?php foreach ($productInfo['applications'] as $application) : ?>
+                            <li><?php echo htmlspecialchars($application); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
 </body>
 </html>
+
+
+

@@ -4,7 +4,7 @@ require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-
 $data = readUserData();
 
 // Initialize variables to hold form data
-$productName = $description = '';
+$productName = $description = $application ='';
 $error = '';
 
 // Check if the form is submitted
@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     $productName = $_POST['product_name'];
     $description = $_POST['description'];
+    $application = $_POST['$application'];
 
     // Validate form data (you can add more validation as needed)
     if (empty($productName) || empty($description)) {
@@ -20,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Create a new product entry
         $newProduct = [
             'description' => $description,
+            'application' => $application
         ];
 
         // Add the new product to the "Key Products & Services" section
@@ -51,10 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ?>
 
     <form method="post" action="">
-        <label for="product_name">Product/Service Name:</label>
+        <label>Product/Service Name:</label>
         <input type="text" name="product_name" required><br>
-        <label for="description">Description:</label>
+        <label>Description:</label>
         <textarea name="description" required></textarea><br>
+        <label >Applications:</label>
+        <textarea name="application" required></textarea><br>
         <input type="submit" value="Create">
     </form>
 </body>

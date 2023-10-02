@@ -23,14 +23,8 @@ if (isset($_GET['name'])) {
 
 // Check if the "delete" button is clicked
 if (isset($_POST['delete'])) {
-    // Remove the item from the array
-    unset($products_and_services['Key Products & Services'][$itemName]);
-    
-    // Save the updated data back to the team.json file
-    file_put_contents('team.json', json_encode($products_and_services, JSON_PRETTY_PRINT));
-    
-    // Redirect back to the index.php page
-    header('Location: index.php');
+    // Redirect to the delete.php page
+    header('Location: delete.php');
     exit();
 }
 ?>

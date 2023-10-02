@@ -65,15 +65,15 @@ function fillTeamTable($JSONData)
 
         // Echo the HTML template with the extracted information
         echo "<tr>
-    <td> {$name}</td>
-    <td> {$position}</td>
+    <td><a href=\"http://localhost/ASE230/week4/ASE230-Company-website/team/detail.php?name=" . urlencode($name) . "\">{$name}</a></td>
+    <td>{$position}</td>
     <td>{$imageSrc}</td>
     <td>{$description}</td>
   </tr>";
         $counter++;
     }
-
 }
+
 
 
 function fillServices($JSONData)
