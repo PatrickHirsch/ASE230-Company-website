@@ -23,14 +23,8 @@ if (isset($_GET['name'])) {
 
 // Check if the "delete" button is clicked
 if (isset($_POST['delete'])) {
-    // Remove the team member from the array
-    unset($data['Team'][$teamMemberName]);
-    
-    // Save the updated data back to the starluxe.json file
-    file_put_contents('starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
-    
     // Redirect back to the index.php page or any other desired location
-    header('Location: index.php');
+    header('Location: delete.php');
     exit();
 }
 ?>
@@ -47,7 +41,12 @@ if (isset($_POST['delete'])) {
     <p>Description: <?php echo $teamMember['description']; ?></p>
     
     <!-- You can display the team member's image here -->
-    <img src="<?php echo $teamMember['image']; ?>" alt="<?php echo $teamMemberName; ?>">
+<!-- Check if 'image' key exists before displaying the image -->
+<?php if (isset($teamMember['image'])): ?>
+        <img src="<?php echo $teamMember['image']; ?>" alt="<?php echo $teamMemberName; ?>">
+    <?php else: ?>
+        <p>No image available.</p>
+    <?php endif; ?>
     
     <form method="post" action="">
         <input type="submit" name="delete" value="Delete">
