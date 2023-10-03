@@ -110,15 +110,13 @@ function collectImage($fileInputName, $uploadDirectory, &$data) {
             
             // Check if the file size is less than or equal to 100,000 bytes (100 KB)
             if ($_FILES[$fileInputName]['size'] <= 100000000) {
-                error_log('test2');
+                //error_log('test2');
                 // Generate a unique filename to avoid overwriting existing files
                 $filename = uniqid('image_') . '.' . pathinfo($_FILES[$fileInputName]['name'], PATHINFO_EXTENSION);
-                error_log(print_r($_FILES, true));
+                //error_log(print_r($_FILES, true));
                 // Move the uploaded file to the specified directory
                 if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], $uploadDirectory . '/' . $filename)) {
                     // Add the image path to the data array
-                    
-                    
 
                     return ['success' => true, 'filename' => $filename];
                 } else {

@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         error_log(print_r($result,true));
         
-        $newMember['file'] = $result['filename'];
+        $newMember['image'] = $result['filename'];
         // Add the new team member to the "Team" section
         $data['Team'][$name] = $newMember;
         

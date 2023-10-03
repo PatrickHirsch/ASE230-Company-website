@@ -11,6 +11,7 @@ if (isset($_GET['name'])) {
     // Check if the team member exists in the "Team" section
     if (isset($data['Team'][$teamMemberName])) {
         $teamMember = $data['Team'][$teamMemberName];
+        $imageSrc = $teamMember['image'];
     } else {
         // Handle the case when the team member doesn't exist
         echo 'Team member not found.';
@@ -48,7 +49,7 @@ if (isset($_SESSION['message'])){
     <!-- You can display the team member's image here -->
 <!-- Check if 'image' key exists before displaying the image -->
 <?php if (isset($teamMember['image'])): ?>
-        <img src="<?php echo $teamMember['image']; ?>" alt="<?php echo $teamMemberName; ?>">
+    <img src="../<?= $imageSrc?>" alt="<?php echo $teamMemberName; ?>">
     <?php else: ?>
         <p>No image available.</p>
     <?php endif; ?>
