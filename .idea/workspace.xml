@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d100b17-9e62-48cd-9e67-a8538d8f80c3" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/awards/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/awards/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/awards/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/awards/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/awards/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/awards/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/awards/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/awards/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.php" beforeDir="false" />
+>>>>>>> origin/NorbergP2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +43,17 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2VUTX2oSRxewIuba3ESvAh6wa3H" />
+<<<<<<< HEAD
+=======
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+>>>>>>> origin/NorbergP2
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -47,6 +70,29 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;NorbergP2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ASE230-Company-website/admin/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ASE230-Company-website\admin\pages" />
+      <recent name="C:\xampp\htdocs\ASE230-Company-website\admin\awards" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ASE230-Company-website" />
+>>>>>>> origin/NorbergP2
       <recent name="C:\xampp\htdocs\ASE230-Company-website\data" />
     </key>
   </component>
@@ -59,7 +105,14 @@
       <option name="presentableId" value="Default" />
       <updated>1694889694493</updated>
       <workItem from="1694889695581" duration="2009000" />
+<<<<<<< HEAD
       <workItem from="1695052830564" duration="5341000" />
+=======
+      <workItem from="1695052830564" duration="6476000" />
+      <workItem from="1695302738670" duration="25000" />
+      <workItem from="1696174824185" duration="10860000" />
+      <workItem from="1696192239439" duration="12610000" />
+>>>>>>> origin/NorbergP2
     </task>
     <servers />
   </component>

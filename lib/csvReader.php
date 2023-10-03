@@ -4,7 +4,7 @@ function readCsv($file) {
     if (file_exists($file)) {
         $fp = fopen($file, 'r');
         while (!feof($fp)) {
-            $pricingPlan[] = fgetcsv($fp, 1024);
+            $pricingPlan[] = fgetcsv($fp, 1024, ';');
         }
         fclose($fp);
     }
