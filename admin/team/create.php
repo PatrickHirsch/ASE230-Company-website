@@ -1,8 +1,8 @@
 <?php
 // Load JSON data from starluxe.json file
-require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
-$data = readUserData();
-$uploadDirectory = __DIR__ . '/images/team';
+require_once('../../lib/jsonReader.php');
+$data = readUserData('../../data/starluxe.json');
+$uploadDirectory = '../../images/team';
 
 // Include the collectImage function here
 
@@ -25,28 +25,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $newMember = [
             'title' => $title,
             'description' => $description,
+			'image' => null
         ];
-
-        // Optionally, add an image if provided
-        if (!empty($image)) {
-            $newMember['image'] = $image;
-        }
+		
+        
         $result = collectImage('image1', $uploadDirectory,$data);
 
         if ($result['success']) {
             // Update the $image variable with the uploaded filename
             $image = 'images/team/' . $result['filename']; // Adjust the path to match your directory structure
+			$newMember['image'] = $image;
             echo 'File uploaded successfully. Filename: ' . $image;
         } else {
             echo 'Error: ' . $result['message'];
         }
+
+		
 
         // Add the new team member to the "Team" section
         $data['Team'][$name] = $newMember;
 
         // Save the updated data back to the starluxe.json file
         $updatedData = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents('/Applications/XAMPP/htdocs/ase230/week4/ASE230-Company-website/lib/starluxe.json', $updatedData);
+        file_put_contents('../../data/starluxe.json', $updatedData);
 
         // Redirect to the detail page for the newly created team member
         header("Location: detail.php?name=" . urlencode($name));
@@ -54,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$uploadDirectory = __DIR__ . '/images/team'; // Specify the upload directory
+$uploadDirectory = '../../images/team'; // Specify the upload directory
 
 ?>
 

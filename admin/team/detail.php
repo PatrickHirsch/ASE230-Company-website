@@ -1,7 +1,7 @@
 <?php
 // Load JSON data from starluxe.json file
-require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
-$data = readUserData();
+require_once('../../lib/jsonReader.php');
+$data = readUserData('../../data/starluxe.json');
 
 // Check if the team member name is provided as a query parameter
 if (isset($_GET['name'])) {
@@ -43,13 +43,14 @@ if (isset($_POST['delete'])) {
     <!-- You can display the team member's image here -->
 <!-- Check if 'image' key exists before displaying the image -->
 <?php if (isset($teamMember['image'])): ?>
-        <img src="<?php echo $teamMember['image']; ?>" alt="<?php echo $teamMemberName; ?>">
+        <img src="../../<?php echo $teamMember['image']; ?>" alt="<?php echo $teamMemberName; ?>">
     <?php else: ?>
         <p>No image available.</p>
     <?php endif; ?>
     
     <form method="post" action="">
-        <input type="submit" name="delete" value="Delete">
+        <!-- input type="submit" name="delete" value="Delete" -->
+        <a href="delete.php?name=<?php echo urlencode($teamMemberName); ?>">Delete</a>
         <a href="edit.php?name=<?php echo urlencode($teamMemberName); ?>">Edit</a>
     </form>
 </body>

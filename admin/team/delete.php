@@ -1,7 +1,7 @@
 <?php
 // Load JSON data from starluxe.json file
-require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
-$data = readUserData();
+require_once('../../lib/jsonReader.php');
+$data = readUserData('../../data/starluxe.json');
 
 // Initialize variables
 $teamMemberName = '';
@@ -19,7 +19,7 @@ if (isset($_GET['name'])) {
             unset($data['Team'][$teamMemberName]);
 
             // Save the updated data back to the starluxe.json file
-            file_put_contents('starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
+            file_put_contents('../../data/starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
 
             // Redirect to the index page or another appropriate page
             header("Location: index.php");

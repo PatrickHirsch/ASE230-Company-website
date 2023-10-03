@@ -1,7 +1,7 @@
 <?php
 // Load JSON data from team.json file
-require_once('/Applications/XAMPP/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
-$JSONData = readUserData();
+require_once('../../lib/jsonReader.php');
+$JSONData = readUserData('../../data/starluxe.json');
 error_log(print_r($JSONData,true));
 ?>
 
