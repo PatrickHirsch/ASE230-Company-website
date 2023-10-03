@@ -19,7 +19,7 @@ if (isset($_GET['name'])) {
             unset($data['Team'][$teamMemberName]);
 
             // Save the updated data back to the starluxe.json file
-            file_put_contents('starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
+            file_put_contents(__DIR__. '/../data/starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
 
             // Redirect to the index page or another appropriate page
             header("Location: index.php");

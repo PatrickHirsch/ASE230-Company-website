@@ -2,7 +2,7 @@
 function readUserData()
 {
 
-    $file = file_get_contents(__DIR__ . '/../lib/starluxe.json', false, null);
+    $file = file_get_contents(__DIR__ . '/../data/starluxe.json', false, null);
     $file = json_decode($file, true);
 
     return $file;

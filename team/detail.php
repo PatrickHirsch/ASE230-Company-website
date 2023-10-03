@@ -1,7 +1,7 @@
 <?php
  session_start();
 // Load JSON data from starluxe.json file
-require_once(__DIR__ .'/../lib/jsonReader.php');
+require_once(__DIR__. '/../lib/jsonReader.php');
 $data = readUserData();
 
 // Check if the team member name is provided as a query parameter
@@ -46,6 +46,7 @@ if (isset($_SESSION['message'])){
     <title>Team Member Details</title>
 </head>
 <body>
+    <a href="http://localhost/ASE230/week4/ASE230-Company-website/team/index.php">Back to Index</a>
     <h1>Team Member Details</h1>
     <h2><?php echo $teamMemberName; ?></h2>
     <p>Title: <?php echo $teamMember['title']; ?></p>

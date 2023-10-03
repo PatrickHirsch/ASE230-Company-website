@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     $productName = $_POST['product_name'];
     $description = $_POST['description'];
-    $application = $_POST['$application'];
+    $application = $_POST['application'];
 
     // Validate form data (you can add more validation as needed)
     if (empty($productName) || empty($description)) {
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data['Key Products & Services'][$productName] = $newProduct;
 
         // Save the updated data back to the starluxe.json file
-        file_put_contents('starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
+        file_put_contents(__DIR__. '/../data/starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
 
         // Redirect to the edit page for the newly created product
         header("Location: edit.php?name=" . urlencode($productName));

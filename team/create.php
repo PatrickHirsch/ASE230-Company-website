@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Save the updated data back to the starluxe.json file
         $updatedData = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents(__DIR__. '/../lib/starluxe.json', $updatedData);
+        file_put_contents(__DIR__. '/../data/starluxe.json', $updatedData);
 
         // Redirect to the detail page for the newly created team member
         header("Location: detail.php?name=" . urlencode($name));

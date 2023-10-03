@@ -33,7 +33,7 @@ if (isset($_GET['name'])) {
                 $data['Team'][$teamMemberName]['description'] = $newDescription;
 
                 // Save the updated data back to the starluxe.json file
-                file_put_contents('starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
+                file_put_contents(__DIR__. '/../data/starluxe.json', json_encode($data, JSON_PRETTY_PRINT));
 
                 // Redirect back to the list of team members or another appropriate page
                 header("Location: index.php");
