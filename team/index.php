@@ -1,6 +1,6 @@
 <?php
 // Load JSON data from team.json file
-require_once('./lib/jsonReader.php');
+require_once(__DIR__.'/../lib/jsonReader.php');
 $JSONData = readUserData();
 error_log(print_r($JSONData,true));
 ?>

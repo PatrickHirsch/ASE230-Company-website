@@ -25,8 +25,13 @@ if (isset($_GET['name'])) {
 
 // Check if the "delete" button is clicked
 if (isset($_POST['delete'])) {
-    // Redirect back to the index.php page or any other desired location
-    header('Location: delete.php');
+    // Redirect to the delete.php page or any other desired location
+    header('Location: delete.php?name='.urlencode($teamMemberName));
+    exit();
+}
+if (isset($_POST['edit'])) {
+    // Redirect to the delete.php page or any other desired location
+    header('Location: edit.php?name='.urlencode($teamMemberName));
     exit();
 }
 error_log(print_r($_SESSION,true));
@@ -49,14 +54,14 @@ if (isset($_SESSION['message'])){
     <!-- You can display the team member's image here -->
 <!-- Check if 'image' key exists before displaying the image -->
 <?php if (isset($teamMember['image'])): ?>
-    <img src="../<?= $imageSrc?>" alt="<?php echo $teamMemberName; ?>">
+    <img src="../images/team/<?= $imageSrc?>" alt="<?php echo $teamMemberName; ?>" width="500" height="auto">
     <?php else: ?>
         <p>No image available.</p>
     <?php endif; ?>
     
     <form method="post" action="">
         <input type="submit" name="delete" value="Delete">
-        <a href="edit.php?name=<?php echo urlencode($teamMemberName); ?>">Edit</a>
+        <input type="submit" name="edit" value="Edit">
     </form>
 </body>
 </html>

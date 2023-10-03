@@ -1,6 +1,6 @@
 <?php
 // Load JSON data from starluxe.json file
-require_once('/Applications/XAMPP/xamppfiles/htdocs/ase230/week4/ASE230-Company-website/lib/jsonReader.php');
+require_once(__DIR__.'/../lib/jsonReader.php');
 $data = readUserData();
 
 // Initialize variables to hold form data
