@@ -1,12 +1,13 @@
 <?php
 require_once('lib/plainTextReader.php');
 require_once('lib/csvReader.php');
+require_once('./lib/JSONHelper.php');
+require_once('./lib/jsonContent.php');
 $monthlyPricingFile = 'data/monthlyPricingPlan.csv';
 $monthlyPricingList = readCsv($monthlyPricingFile);
 $awardsFile='data/awards.csv';
 $awardsList=readCsv($awardsFile);
-require_once('lib/jsonReader.php');
-$JSONData = readUserData();
+$JSONData = JSONHelper::readAll('./data/starluxe.json');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,7 +132,7 @@ $JSONData = readUserData();
                 </div>
                 <!-- end row -->
                 <div class="row">
-                    <?php fillServices($JSONData);?>
+                    <?php fillServices($JSONData['Key Products & Services']);?>
                     <!-- end col 
 
                     <div class="col-lg-4">
@@ -405,7 +406,7 @@ $JSONData = readUserData();
                 </div>
                 <!-- end row -->
                 <div class="row">
-                <?php fillTeam($JSONData);?>
+                <?php fillTeam($JSONData['Team']);?>
                 </div>
                 <!-- <div class="row">
                     <div class="col-lg-3 col-sm-6">
