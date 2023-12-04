@@ -38,7 +38,6 @@ $JSONData = JSONHelper::readAll('./data/starluxe.json');
                   </div>
             </div>
         </div>
-
         <!--Navbar Start-->
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top" id="navbar">
             <div class="container">
@@ -779,6 +778,7 @@ $JSONData = JSONHelper::readAll('./data/starluxe.json');
         <!-- Footer End -->
 
         <!-- Style switcher -->
+
         <div id="style-switcher">
             <div class="bottom">
                 <a href="javascript: void(0);" id="mode" class="mode-btn text-white">
